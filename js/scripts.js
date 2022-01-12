@@ -19,6 +19,15 @@ $(document).ready(function(){
     // Clears the form after hitting the button
     $("input#new-first-name").val("");
     $("input#new-last-name").val("");
+
+    $(".contact").last().click(function() {
+      // Only shows the title of the contact details e.g "First Name:"
+      $("#show-contact").show();
+      // Add the contact details to the requires fields
+      $("#show-contact h2").text(newContact.firstName);
+      $(".first-name").text(newContact.firstName);
+      $(".last-name").text(newContact.lastName);
+    }); 
   
   });
 });

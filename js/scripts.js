@@ -14,7 +14,27 @@ function Address(street,city,county) {
   this.county = county;
 }
 // User-interface logic
-$(document).ready(function(){
+$(document).ready(function() {
+  //appending a large amount of HTML with jQuery, we'll break it into smaller strings on different lines, 
+  //using the + operator to concatenate them
+  $("#add-address").click(function(){
+    $("#new-addresses").append(
+        '<div class= "new-address">' +
+          '<div class="form-group">' +
+            '<label for="new-street">Street:</label>' +
+            '<input type="text" class="form-control" id="new-street">' +
+          '</div>' +
+          '<div class="form-group">' +
+            '<label for="new-city">City:</label>' +
+            '<input type="text" class="form-control" id="new-city">' +
+          '</div>' +
+          '<div class="form-group">' +
+            '<label for="new-county">County:</label>' +
+            '<input type="text" class="form-control" id="new-county">' +
+          '</div>' +
+        '</div>' 
+    );
+  });
   $("form#new-contact").submit(function(event){
     event.preventDefault();
     // Collecting information/input from the form
@@ -24,7 +44,7 @@ $(document).ready(function(){
     var newContact = new Contact(inputtedFirstName, inputtedLastName);
 
     $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");  
-
+    
     // Clears the form after hitting the button
     $("input#new-first-name").val("");
     $("input#new-last-name").val("");
@@ -37,6 +57,5 @@ $(document).ready(function(){
       $(".first-name").text(newContact.firstName);
       $(".last-name").text(newContact.lastName);
     }); 
-  
   });
 });

@@ -8,11 +8,11 @@ function Contact(first,last) {
 Contact.prototype.fullName = function() {
   return this.firstName + " " + this.lastName;
 }
-// function Address(street,city,country) {
-//   this.street = street;
-//   this.city = city;
-//   this.country = country;
-// }
+function Address(street,city,county) {
+  this.street = street;
+  this.city = city;
+  this.county = county;
+}
 // User-interface logic
 $(document).ready(function(){
   $("form#new-contact").submit(function(event){

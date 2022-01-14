@@ -63,12 +63,12 @@ $(document).ready(function() {
       // Only shows the title of the contact details e.g "First Name:"
       $("#show-contact").show();
       // Add the contact details to the requires fields
-      $("#show-contact h2").text(newContact.firstName);
+      $("#show-contact h2").text(newContact.fullName());
       $(".first-name").text(newContact.firstName);
       $(".last-name").text(newContact.lastName);
-      $("ul'addresses").text("");
+      $("ul#addresses").text("");
       newContact.addresses.forEach(function(address) {
-      $("ul#address").append("<li>" + address.fullAddress() + "</li>");
+        $("ul#addresses").append("<li>" + address.fullAddress() + "</li>");
     });
     }); 
 

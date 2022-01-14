@@ -55,6 +55,10 @@ $(document).ready(function() {
     })
 
     $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");  
+    $("ul'addresses").text("");
+    newContact.addresses.forEach(function(address) {
+      $("ul#addresses").append("<li>" + address.street + "," + address.city + "," + address.county + "</li>");
+    });
     
     // Clears the form after hitting the button
     $("input#new-first-name").val("");

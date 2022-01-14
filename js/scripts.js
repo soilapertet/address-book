@@ -13,6 +13,9 @@ function Address(street,city,county) {
   this.city = city;
   this.county = county;
 }
+Address.prototype.fullAddress = function() {
+  return this.street + "," + this.city + "," + this.county;
+}
 // User-interface logic
 $(document).ready(function() {
   //appending a large amount of HTML with jQuery, we'll break it into smaller strings on different lines, 
@@ -64,7 +67,7 @@ $(document).ready(function() {
       $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");  
       $("ul'addresses").text("");
       newContact.addresses.forEach(function(address) {
-      $("ul#addresses").append("<li>" + address.street + "," + address.city + "," + address.county + "</li>");
+      $("ul#address").append("<li>" + address.fullAddress() + "</li>");
     });
     }); 
 

@@ -57,6 +57,8 @@ $(document).ready(function() {
       newContact.addresses.push(newAddress);
     })
 
+    $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");  
+
     $(".contact").last().click(function() {
       // Only shows the title of the contact details e.g "First Name:"
       $("#show-contact").show();
@@ -64,7 +66,6 @@ $(document).ready(function() {
       $("#show-contact h2").text(newContact.firstName);
       $(".first-name").text(newContact.firstName);
       $(".last-name").text(newContact.lastName);
-      $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");  
       $("ul'addresses").text("");
       newContact.addresses.forEach(function(address) {
       $("ul#address").append("<li>" + address.fullAddress() + "</li>");

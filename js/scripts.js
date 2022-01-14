@@ -54,15 +54,15 @@ $(document).ready(function() {
       newContact.addresses.push(newAddress);
     })
 
-    $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");  
-    $("ul'addresses").text("");
-    newContact.addresses.forEach(function(address) {
-      $("ul#addresses").append("<li>" + address.street + "," + address.city + "," + address.county + "</li>");
-    });
+    
     
     // Clears the form after hitting the button
     $("input#new-first-name").val("");
     $("input#new-last-name").val("");
+    $("input#new-street").val("");
+    $("input#new-city").val("");
+    $("input#new-county").val("");
+
 
     $(".contact").last().click(function() {
       // Only shows the title of the contact details e.g "First Name:"
@@ -71,6 +71,11 @@ $(document).ready(function() {
       $("#show-contact h2").text(newContact.firstName);
       $(".first-name").text(newContact.firstName);
       $(".last-name").text(newContact.lastName);
+      $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");  
+      $("ul'addresses").text("");
+      newContact.addresses.forEach(function(address) {
+      $("ul#addresses").append("<li>" + address.street + "," + address.city + "," + address.county + "</li>");
+    });
     }); 
   });
 });

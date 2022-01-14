@@ -43,6 +43,17 @@ $(document).ready(function() {
     // Saving the collected input in an object
     var newContact = new Contact(inputtedFirstName, inputtedLastName);
 
+    $(".new-address").each(function(){
+      // 'this' keyword refers to the current/parent element/element to which we call the .each() method
+      // .find() method looks through all the child elements of the parent/current element for other elements
+      // that match the criteria provided in the argument
+      var inputtedStreet = $(this).find("input#new-street").val();
+      var inputtedCity = $(this).find("input#new-city").val();
+      var inputtedCounty = $(this).find("input#new-county").val();
+      var newAddress = new Address(inputtedStreet, inputtedCity, inputtedCounty);
+      newContact.addresses.push(newAddress);
+    })
+
     $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");  
     
     // Clears the form after hitting the button

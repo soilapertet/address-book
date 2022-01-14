@@ -54,16 +54,6 @@ $(document).ready(function() {
       newContact.addresses.push(newAddress);
     })
 
-    
-    
-    // Clears the form after hitting the button
-    $("input#new-first-name").val("");
-    $("input#new-last-name").val("");
-    $("input#new-street").val("");
-    $("input#new-city").val("");
-    $("input#new-county").val("");
-
-
     $(".contact").last().click(function() {
       // Only shows the title of the contact details e.g "First Name:"
       $("#show-contact").show();
@@ -77,5 +67,12 @@ $(document).ready(function() {
       $("ul#addresses").append("<li>" + address.street + "," + address.city + "," + address.county + "</li>");
     });
     }); 
+
+    // Clears the form after hitting the button
+    $("input#new-first-name").val("");
+    $("input#new-last-name").val("");
+    $("input#new-street").val("");
+    $("input#new-city").val("");
+    $("input#new-county").val("");
   });
 });

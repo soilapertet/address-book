@@ -38,6 +38,16 @@ $(document).ready(function() {
         '</div>' 
     );
   });
+
+  function resetFields () {
+    // Clears the form after hitting the button
+    $("input#new-first-name").val("");
+    $("input#new-last-name").val("");
+    $("input#new-street").val("");
+    $("input#new-city").val("");
+    $("input#new-county").val("");
+  }
+  
   $("form#new-contact").submit(function(event){
     event.preventDefault();
     // Collecting information/input from the form
@@ -72,11 +82,6 @@ $(document).ready(function() {
     });
     }); 
 
-    // Clears the form after hitting the button
-    $("input#new-first-name").val("");
-    $("input#new-last-name").val("");
-    $("input#new-street").val("");
-    $("input#new-city").val("");
-    $("input#new-county").val("");
+    resetFields();
   });
 });
